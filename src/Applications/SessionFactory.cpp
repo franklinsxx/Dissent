@@ -4,7 +4,7 @@
 #include "../Anonymity/Round.hpp"
 #include "../Anonymity/Session.hpp"
 #include "../Anonymity/ShuffleRound.hpp"
-#include "../Anonymity/TolerantBulkRound.hpp"
+#include "Anonymity/Tolerant/TolerantBulkRound.hpp"
 #include "../Anonymity/TrustedBulkRound.hpp"
 #include "../Connections/ConnectionManager.hpp"
 #include "../Connections/DefaultNetwork.hpp"
@@ -17,7 +17,7 @@ using Dissent::Anonymity::BulkRound;
 using Dissent::Anonymity::Group;
 using Dissent::Anonymity::NullRound;
 using Dissent::Anonymity::RepeatingBulkRound;
-using Dissent::Anonymity::TolerantBulkRound;
+using Dissent::Anonymity::Tolerant::TolerantBulkRound;
 using Dissent::Anonymity::Session;
 using Dissent::Anonymity::ShuffleRound;
 using Dissent::Anonymity::TCreateRound;

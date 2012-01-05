@@ -1,11 +1,11 @@
-#ifndef DISSENT_ANONYMITY_CONFLICT_H_GUARD
-#define DISSENT_ANONYMITY_CONFLICT_H_GUARD
+#ifndef DISSENT_ANONYMITY_TOLERANT_CONFLICT_H_GUARD
+#define DISSENT_ANONYMITY_TOLERANT_CONFLICT_H_GUARD
 
 #include <QString>
 
 namespace Dissent {
 namespace Anonymity {
-namespace Blame {
+namespace Tolerant {
   
   class Conflict {
 

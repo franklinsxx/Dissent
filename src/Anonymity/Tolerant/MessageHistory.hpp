@@ -1,5 +1,5 @@
-#ifndef DISSENT_ANONYMITY_BLAME_MESSAGE_HISTORY_H_GUARD
-#define DISSENT_ANONYMITY_BLAME_MESSAGE_HISTORY_H_GUARD
+#ifndef DISSENT_ANONYMITY_TOLERANT_MESSAGE_HISTORY_H_GUARD
+#define DISSENT_ANONYMITY_TOLERANT_MESSAGE_HISTORY_H_GUARD
 
 #include <QBitArray>
 #include <QByteArray>
@@ -10,7 +10,7 @@
 
 namespace Dissent {
 namespace Anonymity {
-namespace Blame {
+namespace Tolerant {
 
   /**
    * MessageHistory holds a record of data messages received

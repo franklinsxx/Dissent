@@ -1,5 +1,5 @@
-#ifndef DISSENT_ANONYMITY_BLAME_ALIBI_DATA_H_GUARD
-#define DISSENT_ANONYMITY_BLAME_ALIBI_DATA_H_GUARD
+#ifndef DISSENT_ANONYMITY_TOLERANT_ALIBI_DATA_H_GUARD
+#define DISSENT_ANONYMITY_TOLERANT_ALIBI_DATA_H_GUARD
 
 #include <QBitArray>
 #include <QByteArray>
@@ -11,7 +11,7 @@
 
 namespace Dissent {
 namespace Anonymity {
-namespace Blame {
+namespace Tolerant {
 
   /**
    * AlibiData holds all of the byte arrays that this node XORd

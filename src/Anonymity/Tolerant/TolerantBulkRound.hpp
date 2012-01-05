@@ -1,21 +1,21 @@
-#ifndef DISSENT_ANONYMITY_TOLERANT_BULK_ROUND_H_GUARD
-#define DISSENT_ANONYMITY_TOLERANT_BULK_ROUND_H_GUARD
+#ifndef DISSENT_ANONYMITY_TOLERANT_TOLERANT_BULK_ROUND_H_GUARD
+#define DISSENT_ANONYMITY_TOLERANT_TOLERANT_BULK_ROUND_H_GUARD
 
 #include <QMetaEnum>
 #include <QSharedPointer>
 
-#include "Anonymity/Blame/Accusation.hpp"
-#include "Anonymity/Blame/AlibiData.hpp"
-#include "Anonymity/Blame/Conflict.hpp"
-#include "Anonymity/Blame/MessageHistory.hpp"
+#include "Anonymity/Log.hpp"
+#include "Anonymity/MessageRandomizer.hpp"
+#include "Anonymity/Round.hpp"
 #include "Messaging/BufferSink.hpp"
 #include "Messaging/GetDataCallback.hpp"
 #include "Utils/Triple.hpp"
 #include "Utils/Random.hpp"
 
-#include "Log.hpp"
-#include "MessageRandomizer.hpp"
-#include "Round.hpp"
+#include "Accusation.hpp"
+#include "AlibiData.hpp"
+#include "Conflict.hpp"
+#include "MessageHistory.hpp"
 
 namespace Dissent {
 namespace Crypto {
@@ -30,10 +30,12 @@ namespace Utils {
 namespace Anonymity {
   class ShuffleRound;
 
+namespace Tolerant {
+
   /**
    * Dissent "v3" Bulk
    */
-  class TolerantBulkRound : public Round {
+  class TolerantBulkRound : public Dissent::Anonymity::Round {
     Q_OBJECT
 
     Q_ENUMS(State);
@@ -42,10 +44,9 @@ namespace Anonymity {
     Q_ENUMS(MessageType);
 
     public:
-      typedef Dissent::Anonymity::Blame::Accusation Accusation;
-      typedef Dissent::Anonymity::Blame::AlibiData AlibiData;
-      typedef Dissent::Anonymity::Blame::Conflict Conflict;
-      typedef Dissent::Anonymity::Blame::MessageHistory MessageHistory;
+      typedef Dissent::Anonymity::Log Log;
+      typedef Dissent::Anonymity::MessageRandomizer MessageRandomizer;
+      typedef Dissent::Anonymity::Round Round;
       typedef Dissent::Crypto::DiffieHellman DiffieHellman;
       typedef Dissent::Crypto::Library Library;
       typedef Dissent::Messaging::BufferSink BufferSink;
@@ -741,6 +742,7 @@ namespace Anonymity {
        */
       void BlameShuffleFinished();
   };
+}
 }
 }
 

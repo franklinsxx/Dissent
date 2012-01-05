@@ -3,11 +3,11 @@
 namespace Dissent {
 namespace Tests {
 
-  typedef Dissent::Anonymity::Blame::Accusation Accusation;
-  typedef Dissent::Anonymity::Blame::AlibiData AlibiData;
-  typedef Dissent::Anonymity::Blame::BlameMatrix BlameMatrix;
-  typedef Dissent::Anonymity::Blame::Conflict Conflict;
-  typedef Dissent::Anonymity::Blame::MessageHistory MessageHistory;
+  typedef Dissent::Anonymity::Tolerant::Accusation Accusation;
+  typedef Dissent::Anonymity::Tolerant::AlibiData AlibiData;
+  typedef Dissent::Anonymity::Tolerant::BlameMatrix BlameMatrix;
+  typedef Dissent::Anonymity::Tolerant::Conflict Conflict;
+  typedef Dissent::Anonymity::Tolerant::MessageHistory MessageHistory;
 
   TEST(BlameUtils, Accusation_Basic) {
     Accusation a0;

@@ -5,7 +5,7 @@
 
 namespace Dissent {
 namespace Anonymity {
-namespace Blame {
+namespace Tolerant {
   
   MessageHistory::MessageHistory(uint num_users, uint num_servers) :
     _corrupted_slots(num_users, false),

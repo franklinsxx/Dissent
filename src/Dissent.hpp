@@ -12,13 +12,13 @@
 #include "Anonymity/Session.hpp"
 #include "Anonymity/SessionManager.hpp"
 #include "Anonymity/ShuffleRound.hpp"
-#include "Anonymity/TolerantBulkRound.hpp"
 #include "Anonymity/TrustedBulkRound.hpp"
-#include "Anonymity/Blame/Accusation.hpp"
-#include "Anonymity/Blame/AlibiData.hpp"
-#include "Anonymity/Blame/BlameMatrix.hpp"
-#include "Anonymity/Blame/Conflict.hpp"
-#include "Anonymity/Blame/MessageHistory.hpp"
+#include "Anonymity/Tolerant/Accusation.hpp"
+#include "Anonymity/Tolerant/AlibiData.hpp"
+#include "Anonymity/Tolerant/BlameMatrix.hpp"
+#include "Anonymity/Tolerant/Conflict.hpp"
+#include "Anonymity/Tolerant/MessageHistory.hpp"
+#include "Anonymity/Tolerant/TolerantBulkRound.hpp"
 
 #include "Applications/CommandLine.hpp"
 #include "Applications/ConsoleSink.hpp"
@@ -117,6 +117,7 @@
 #include "Web/Services/WebService.hpp"
 
 using namespace Dissent::Anonymity;
+using namespace Dissent::Anonymity::Tolerant;
 using namespace Dissent::Applications;
 using namespace Dissent::Crypto;
 using namespace Dissent::Connections;

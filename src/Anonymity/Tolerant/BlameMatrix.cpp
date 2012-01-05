@@ -6,7 +6,7 @@
 
 namespace Dissent {
 namespace Anonymity {
-namespace Blame {
+namespace Tolerant {
 
   BlameMatrix::BlameMatrix(uint num_users, uint num_servers) :
     _num_users(num_users),

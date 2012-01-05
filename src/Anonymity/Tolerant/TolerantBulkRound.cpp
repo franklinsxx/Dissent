@@ -1,4 +1,5 @@
-#include "Blame/BlameMatrix.hpp"
+#include "Anonymity/BulkRound.hpp"
+#include "Anonymity/ShuffleRound.hpp"
 #include "Connections/Connection.hpp"
 #include "Connections/Network.hpp"
 #include "Crypto/DiffieHellman.hpp"
@@ -10,13 +11,9 @@
 #include "Utils/Random.hpp"
 #include "Utils/Serialization.hpp"
 
-#include "BulkRound.hpp"
-#include "ShuffleRound.hpp"
 #include "TolerantBulkRound.hpp"
+#include "BlameMatrix.hpp"
 
-using Dissent::Anonymity::Blame::Accusation;
-using Dissent::Anonymity::Blame::AlibiData;
-using Dissent::Anonymity::Blame::BlameMatrix;
 using Dissent::Connections::Connection;
 using Dissent::Crypto::CryptoFactory;
 using Dissent::Crypto::DiffieHellman;
@@ -29,6 +26,7 @@ using Dissent::Utils::Serialization;
 
 namespace Dissent {
 namespace Anonymity {
+namespace Tolerant {
   TolerantBulkRound::TolerantBulkRound(const Group &group,
       const Credentials &creds, const Id &round_id, QSharedPointer<Network> network,
       GetDataCallback &get_data, CreateRound create_shuffle) :
@@ -1422,7 +1420,6 @@ namespace Anonymity {
       _state = DataSharing;
     }
   }
-
-
+}
 }
 }

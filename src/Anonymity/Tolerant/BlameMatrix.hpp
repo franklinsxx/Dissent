@@ -1,5 +1,5 @@
-#ifndef DISSENT_ANONYMITY_BLAME_BLAME_MATRIX_H_GUARD
-#define DISSENT_ANONYMITY_BLAME_BLAME_MATRIX_H_GUARD
+#ifndef DISSENT_ANONYMITY_TOLERANT_BLAME_MATRIX_H_GUARD
+#define DISSENT_ANONYMITY_TOLERANT_BLAME_MATRIX_H_GUARD
 
 #include <QBitArray>
 #include <QByteArray>
@@ -12,7 +12,7 @@
 
 namespace Dissent {
 namespace Anonymity {
-namespace Blame {
+namespace Tolerant {
 
   /**
    * BlameMatrix uses a combination of alibi data (sent by other nodes)

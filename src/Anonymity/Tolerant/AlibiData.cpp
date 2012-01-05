@@ -9,7 +9,7 @@ using namespace Dissent::Utils;
 
 namespace Dissent {
 namespace Anonymity {
-namespace Blame {
+namespace Tolerant {
 
   AlibiData::AlibiData(uint n_slots, uint n_members) :
     _corrupted_slots(n_slots, false),

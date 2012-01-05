@@ -8,7 +8,7 @@ using Dissent::Utils::Serialization;
 
 namespace Dissent {
 namespace Anonymity {
-namespace Blame {
+namespace Tolerant {
 
   Accusation::Accusation() :
     _initialized(false) {};

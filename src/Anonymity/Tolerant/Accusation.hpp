@@ -1,5 +1,5 @@
-#ifndef DISSENT_ANONYMITY_ACCUSATION_H_GUARD
-#define DISSENT_ANONYMITY_ACCUSATION_H_GUARD
+#ifndef DISSENT_ANONYMITY_TOLERANT_ACCUSATION_H_GUARD
+#define DISSENT_ANONYMITY_TOLERANT_ACCUSATION_H_GUARD
 
 #include <QByteArray>
 #include <QDebug>
@@ -7,7 +7,7 @@
 
 namespace Dissent {
 namespace Anonymity {
-namespace Blame {
+namespace Tolerant {
   
   /**
    * Accusation holds the information that an anonymous slot owner

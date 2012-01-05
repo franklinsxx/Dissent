@@ -59,7 +59,7 @@ namespace Utils {
        * The number of bytes required to serialize a bit array
        * @param the bit array 
        */
-      static int BytesRequired(QBitArray &bits) 
+      static int BytesRequired(const QBitArray &bits) 
       {
         if(!bits.count()) return 1;
         return (bits.count() / 8) + ((bits.count() % 8) ? 1 : 0);
@@ -80,7 +80,7 @@ namespace Utils {
        * @param offset where in the byte array to write the bits
        * @returns the number of bytes written
        */
-      static int WriteBitArray(QBitArray &bits, QByteArray &data, int offset)
+      static int WriteBitArray(const QBitArray &bits, QByteArray &data, int offset)
       {
         int n_bytes = BytesRequired(bits);
         if((offset + n_bytes) > data.count()) {
@@ -112,7 +112,7 @@ namespace Utils {
        * @param the number of bits to read
        * @returns the bit array
        */
-      static QBitArray ReadBitArray(QByteArray &data, int offset, int n_bits)
+      static QBitArray ReadBitArray(const QByteArray &data, int offset, int n_bits)
       {
         QBitArray out(n_bits, false);
         int n_bytes = BytesRequired(out);
@@ -121,18 +121,18 @@ namespace Utils {
           qFatal("Byte array is not long enough");
         }
 
-        int last = offset + n_bytes; /* Index of the byte after the last byte */
-        int to_read; /* Number of bits to read in a given byte */
+        int last = offset + n_bytes; // Index of the byte after the last byte
+        int to_read; // Number of bits to read in a given byte
 
-        /* Loop once per byte */
+        // Loop once per byte
         for(int byte = 0; (byte+offset) < last; byte++) {
 
           if((byte+offset) < (last-1) || !(n_bits % 8)) {
-            /* If we're not at the last byte, or if the last byte
-               is filled up, we need to read 8 bits */
+            // If we're not at the last byte, or if the last byte is filled up,
+            // we need to read 8 bits
             to_read = 8;
           } else {
-            /* Otherwise we read less than 8 bits */
+            // Otherwise we read less than 8 bits
             to_read = n_bits % 8;
           }
 
