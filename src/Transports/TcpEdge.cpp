@@ -37,6 +37,8 @@ namespace Transports {
     {
       qCritical() << "Didn't write all data to the socket!!!!!";
     }
+
+    qDebug() << "Just sent" << data.size() << "byte message via" << ToString();
   }
 
   void TcpEdge::Read()
@@ -44,6 +46,7 @@ namespace Transports {
     int total_length = _socket->bytesAvailable();
 
     while(total_length >= 8) {
+      qDebug() << "Total bytes available:" << total_length << ToString();
       QByteArray length_arr = _socket->peek(4);
       if(length_arr.isEmpty()) {
         qCritical() << "Error reading Tcp socket in" << ToString();
@@ -72,6 +75,7 @@ namespace Transports {
         qCritical() << "Mismatch on byte array!";
       }
 
+      qDebug() << "Pushing a message of size:" << length << ToString();
       PushData(msg.mid(4, length), this);
       total_length = _socket->bytesAvailable();
     }
