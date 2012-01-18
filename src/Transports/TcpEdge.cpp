@@ -56,6 +56,7 @@ namespace Transports {
 
       int length = Serialization::ReadInt(length_arr, 0);
       if(length + 8 > total_length) {
+        qDebug() << "Available data not long enough!" << total_length << length << ToString();
         break;
       }
 
