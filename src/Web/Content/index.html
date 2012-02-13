@@ -59,7 +59,6 @@ a {
  
 </style> 
 </head>
-
 <body>
 <div id="wrapper">
   <div id="menu">
@@ -74,8 +73,45 @@ a {
     <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
 </form>
 
+
+<div id="fb-root"></div>
+<script>
+
+</script>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
+function groupPost(msg) {
+  FB.init({
+    appId      : '185668971476155', // App ID
+    channelUrl : '//www.franklinsong.com/channel.html', // Channel File
+    status     : true, // check login status
+    cookie     : true, // enable cookies to allow the server to access the session
+    xfbml      : true  // parse XFBML
+  });
+
+  var wallPost = {
+      access_token: "AAACo3W0XNLsBAAOuVudZAm8VkHM85v8S04cbTipsjZAInWpebbXBB0h0XeWFjSpDTclX0iYqATht0cZCQwSs5lmSI22k2pugepv8RQ9rwZDZD",
+      message: "[Anon Msg]: " + msg
+  };
+
+  FB.api('/176518412424847/feed', 'post', wallPost, function(response) {
+      if (!response || response.error) {
+          //alert('Error occurred');
+      } else {
+      //alert('Success!');
+  }
+  });
+};
+
+  // Load the SDK Asynchronously
+(function(d){
+   var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+   js = d.createElement('script'); js.id = id; js.async = true;
+   js.src = "//connect.facebook.net/en_US/all.js";
+   d.getElementsByTagName('head')[0].appendChild(js);
+ }(document));
+
 
 var chat_wel = document.getElementById('chatbox');
 chat_wel.innerHTML += 'Welcome to Dissent Chat Room<br />';
@@ -107,6 +143,7 @@ $(document).ready(function(){
       var jsonObj = jQuery.parseJSON(data);
       for(i=0;i<jsonObj.output.messages.length;i++){
         chat_div.innerHTML += 'message: ' + jsonObj.output.messages[i] + '<br />';
+	groupPost(jsonObj.output.messages[i]);
       }
       if(jsonObj.output.messages.length != 0){
         offset += jsonObj.output.messages.length;
